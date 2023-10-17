@@ -26,6 +26,12 @@ export default function CountersGlobal() {
   function deleteCounter(uidString) {
     console.log(`deleteCounter(${uidString})`); 
     /* Implement me! */
+    setCounts((prevState) =>
+    {
+      let countsCopy = {... counts};
+      delete countsCopy[uidString]
+      return countsCopy;
+    })
   }
 
   return (
@@ -67,8 +73,9 @@ function Counter( {uidString, getCount, setCount, deleteMe} ) {
   }
 
   function toggleExpand() {
-    console.log('toggleExpand');
+    console.log('toggleExpand' + JSON.stringify(uidString));
     /* Implememt me! */
+    setExpanded(true);
   }
 
   return (
