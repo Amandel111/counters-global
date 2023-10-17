@@ -75,7 +75,7 @@ function Counter( {uidString, getCount, setCount, deleteMe} ) {
   function toggleExpand() {
     console.log('toggleExpand' + JSON.stringify(uidString));
     /* Implememt me! */
-    setExpanded(true);
+    setExpanded((prevState) => {return !prevState});
   }
 
   return (
